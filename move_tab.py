@@ -12,8 +12,8 @@ Redistributions of files must retain the above copyright notice.
 
 http://github.com/FMCorz/MoveTab
 """
+import sublime_plugin
 
-import sublime, sublime_plugin
 
 class MoveTabCommand(sublime_plugin.WindowCommand):
 
