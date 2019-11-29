@@ -54,9 +54,3 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
             return False
         (group, index) = self.window.get_view_index(view)
         return len(self.window.views_in_group(group)) > 1
-
-    def is_visible(self):
-        return True
-
-    def description(self):
-        return None
