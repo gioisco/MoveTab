@@ -18,35 +18,21 @@ import sublime_plugin
 class MoveTabCommand(sublime_plugin.WindowCommand):
 
     def run(self, position):
-        position = str(position)
         view = self.window.active_view()
-        (group, index) = self.window.get_view_index(view)
+        group, index = self.window.get_view_index(view)
         if index < 0:
             return
         count = len(self.window.views_in_group(group))
 
-        direction = None
-        if position.startswith('-') or position.startswith('+'):
-            direction = position[0]
-            steps = int(position[1:])
-            if direction == '-':
-                position = index - steps
-            else:
-                position = index + steps
-
-        position = int(position)
-        if position < 0:
-            position = count - 1
-        elif position > count - 1:
-            if direction: position = 0
-            else: position = count - 1
+        if isinstance(position, str) and position[0] in '-+':
+            position = (index + int(position)) % count
+        else:
+            position = min(count - 1, max(0, int(position)))
 
         # Avoid flashing tab when moving to same index
-        if position == index:
-            return
-
-        self.window.set_view_index(view, group, position)
-        self.window.focus_view(view)
+        if position != index:
+            self.window.set_view_index(view, group, position)
+            self.window.focus_view(view)
 
     def is_enabled(self):
         return -1 not in self.window.get_view_index(self.window.active_view())
