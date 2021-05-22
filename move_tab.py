@@ -35,4 +35,5 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
             self.window.focus_view(view)
 
     def is_enabled(self):
-        return -1 not in self.window.get_view_index(self.window.active_view())
+        (group, index) = self.window.get_view_index(self.window.active_view())
+        return -1 not in (group, index) and len(self.window.views_in_group(group)) > 1
