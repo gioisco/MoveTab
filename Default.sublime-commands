@@ -23,7 +23,7 @@
         "caption": "Preferences: MoveTab Key Bindings",
         "command": "edit_settings",
         "args": {
-            "base_file": "Packages/MoveTab/Default (${platform}).sublime-keymap",
+            "base_file": "${packages}/MoveTab/Default (${platform}).sublime-keymap",
             "default": "[\n\t$0\n]",
         },
     },
