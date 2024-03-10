@@ -10,13 +10,17 @@ Redistributions of files must retain the above copyright notice.
 
 http://github.com/FMCorz/MoveTab
 """
+
+from __future__ import annotations
+
 import sublime_plugin
 
 
 class MoveTabCommand(sublime_plugin.WindowCommand):
 
-    def run(self, position):
-        view = self.window.active_view()
+    def run(self, position: str | int) -> None:
+        if not (view := self.window.active_view()):
+            return
         group, index = self.window.get_view_index(view)
         if index < 0:
             return
@@ -32,6 +36,8 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
             self.window.set_view_index(view, group, position)
             self.window.focus_view(view)
 
-    def is_enabled(self):
-        (group, index) = self.window.get_view_index(self.window.active_view())
+    def is_enabled(self) -> bool:
+        if not (view := self.window.active_view()):
+            return False
+        (group, index) = self.window.get_view_index(view)
         return -1 not in (group, index) and len(self.window.views_in_group(group)) > 1
