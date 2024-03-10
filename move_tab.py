@@ -34,7 +34,7 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
         elif position < 0:
             position = count - position
 
-        position = min(count - 1, max(0, position))
+        position = max(0, min(position, count - 1))
 
         # Avoid flashing tab when moving to same index
         if position != index:
