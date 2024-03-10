@@ -17,7 +17,7 @@
     {
         "caption": "Move Tab: To last position",
         "command": "move_tab",
-        "args": { "position": 999 },
+        "args": { "position": -1 },
     },
     {
         "caption": "Preferences: MoveTab Key Bindings",

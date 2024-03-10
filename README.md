@@ -28,6 +28,8 @@ to move the currently active tab to a new position.
 - To move the tabe to an absolute position, e.g. the first,
   specify it as an integer.
   The position is 0-based.
+  Negative integers start counting from the end of the group,
+  so a position of `-1` would be the last in the group.
 - To move the tab relatively,
   specify it as a string
   prefixed with either `+` or `-`.

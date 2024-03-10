@@ -26,10 +26,15 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
             return
         count = len(self.window.views_in_group(group))
 
-        if isinstance(position, str) and position[0] in '-+':
-            position = (index + int(position)) % count
-        else:
-            position = min(count - 1, max(0, int(position)))
+        if isinstance(position, str):
+            if position[0] in '-+':
+                position = (index + int(position)) % count
+            else:
+                position = int(position)
+        elif position < 0:
+            position = count - position
+
+        position = min(count - 1, max(0, position))
 
         # Avoid flashing tab when moving to same index
         if position != index:

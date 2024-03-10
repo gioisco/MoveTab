@@ -3,7 +3,7 @@
 	// {
 	// 	"keys": ["ctrl+shift+end"],
 	// 	"command": "move_tab",
-	// 	"args": { "position": 999 }
+	// 	"args": { "position": -1 }
 	// },
 	// {
 	// 	"keys": ["ctrl+shift+home"],
