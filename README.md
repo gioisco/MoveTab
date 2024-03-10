@@ -22,17 +22,24 @@ are suggested but disabled by default.*
 ### Commands
 
 This package provides the `move_tab` command
-which accepts a single parameter named `position`
+which requires a parameter named `position`
+and optionaly accepts a parameter `cycle`
 to move the currently active tab to a new position.
 
-- To move the tabe to an absolute position, e.g. the first,
-  specify it as an integer.
+- To move the tab to an absolute position,
+  e.g. the first,
+  specify `position` as an integer.
   The position is 0-based.
   Negative integers start counting from the end of the group,
   so a position of `-1` would be the last in the group.
 - To move the tab relatively,
-  specify it as a string
+  specify `position` as a string
   prefixed with either `+` or `-`.
+- To start cycling the position of the tab
+  when reaching the end or the beginning,
+  set `cycle` to `true`
+  (the default is `false`, i.e. it does not cycle).
+
 
 ## Installation
 

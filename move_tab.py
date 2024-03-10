@@ -18,7 +18,7 @@ import sublime_plugin
 
 class MoveTabCommand(sublime_plugin.WindowCommand):
 
-    def run(self, position: str | int) -> None:
+    def run(self, position: str | int, cycle=False) -> None:
         if not (view := self.window.active_view()):
             return
         group, index = self.window.get_view_index(view)
@@ -28,7 +28,9 @@ class MoveTabCommand(sublime_plugin.WindowCommand):
 
         if isinstance(position, str):
             if position[0] in '-+':
-                position = (index + int(position)) % count
+                position = (index + int(position))
+                if cycle:
+                    position %= count
             else:
                 position = int(position)
         elif position < 0:

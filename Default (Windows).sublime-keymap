@@ -10,6 +10,7 @@
 	// 	"command": "move_tab",
 	// 	"args": { "position": 0 }
 	// },
+
 	{
 		"keys": ["ctrl+shift+pageup"],
 		"command": "move_tab",
@@ -19,5 +20,17 @@
 		"keys": ["ctrl+shift+pagedown"],
 		"command": "move_tab",
 		"args": { "position": "+1" }
-	}
+	},
+
+	// Allow cycling at the beginnig or end of the group
+	// {
+	// 	"keys": ["ctrl+shift+pageup"],
+	// 	"command": "move_tab",
+	// 	"args": { "position": "-1", "cycle": true }
+	// },
+	// {
+	// 	"keys": ["ctrl+shift+pagedown"],
+	// 	"command": "move_tab",
+	// 	"args": { "position": "+1", "cycle": true }
+	// },
 ]
