@@ -1,10 +1,8 @@
-Move Tab
-========
+# Move Tab
 
 Plugin for Sublime Text to move tabs around.
 
-Usage
------
+## Usage
 
 The following commands are accessible via the command palette:
 
@@ -20,23 +18,21 @@ The default shortcuts are:
 
 *Shortcuts to move to first or last position are disabled by default.*
 
-Requirements
-------------
+## Requirements
 
 Sublime Text 2 or 3.
 
-Installation
-------------
+## Installation
 
 Use the Package Control.
 
-	Command palette > Package Control: Install Package
+1. Open the Command Palette.
+2. Select `Package Control: Install Package`.
+3. Select `MoveTab`.
 
-Alternatively, simply clone this repository into the Packages directory.
+Alternatively, simply clone this repository into the Packages directory
+(found via *Preferences > Browse Packages...*).
 
-	Preferences > Browse Packages...
-
-License
--------
+## License
 
 Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
