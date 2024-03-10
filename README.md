@@ -13,10 +13,11 @@ The following commands are accessible via the command palette:
 
 The default shortcuts are:
 
-- Linux/Windows: CTRL + Shift + (Page up / Page down)
-- MacOS X: Command + Alt + Shift + (Left / Right)
+- Linux/Windows: <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>Page up</kbd>/<kbd>Page down</kbd>
+- MacOS X: <kbd>Command</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>Left</kbd>/<kbd>Right</kbd>
 
-*Shortcuts to move to first or last position are disabled by default.*
+*Shortcuts to move to first or last position
+are suggested but disabled by default.*
 
 ### Commands
 
@@ -30,10 +31,6 @@ to move the currently active tab to a new position.
 - To move the tab relatively,
   specify it as a string
   prefixed with either `+` or `-`.
-
-## Requirements
-
-Sublime Text 2 or 3.
 
 ## Installation
 
